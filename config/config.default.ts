@@ -1,3 +1,5 @@
+// 默认的配置文件，所有环境都会加载这个配置文件
+
 import { EggAppConfig, EggAppInfo, PowerPartial } from 'egg';
 
 export default (appInfo: EggAppInfo) => {
