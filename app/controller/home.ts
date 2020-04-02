@@ -1,4 +1,5 @@
 import { Controller } from 'egg';
+import { ValidationError } from 'ajv';
 
 export default class HomeController extends Controller {
   public async index() {
@@ -62,5 +63,16 @@ export default class HomeController extends Controller {
     ctx.body = {
       session: useId,
     };
+  }
+
+  public async testAjv() {
+    try {
+      await this.ctx.validate('schema.pagination', this.ctx.request.query);
+    } catch (error) {
+      console.log('ValidationError ---> ', ValidationError);
+      console.log('error ---> ', error);
+      console.log('error ---> ', error instanceof ValidationError);
+    }
+    // this.ctx.body = 'success';
   }
 }

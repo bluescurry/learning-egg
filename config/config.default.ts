@@ -9,8 +9,12 @@ export default (appInfo: EggAppInfo) => {
   // use for cookie sign key, should change to your own and keep security
   config.keys = appInfo.name + '_1585493418274_3522';
 
+  config.security = {
+    csrf: false,
+  };
+
   // add your egg config in here
-  config.middleware = [];
+  config.middleware = [ 'error' ];
 
   // add your special config in here
   const bizConfig = {

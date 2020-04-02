@@ -6,6 +6,10 @@ const plugin: EggPlugin = {
   //   enable: true,
   //   package: 'egg-view-nunjucks',
   // },
+  ajv: {
+    enable: true,
+    package: 'egg-ajv',
+  },
 };
 
 export default plugin;

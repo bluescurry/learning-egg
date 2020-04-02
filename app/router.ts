@@ -16,4 +16,6 @@ export default (app: Application) => {
   router.get('/addsession', controller.home.addSession);
 
   router.get('/getsession', controller.home.getSession);
+
+  router.get('/testajv', controller.home.testAjv);
 };
